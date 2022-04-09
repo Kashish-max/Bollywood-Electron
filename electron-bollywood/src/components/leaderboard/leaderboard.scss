@@ -1,0 +1,252 @@
+.leaderboard-comp {
+    position: relative;
+
+    .leaderboard {
+        &:before, &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+        }
+        &:before {
+            width: 100%;
+            height: 3px;
+            background: #ff4655;
+            // background: rgba(48, 192, 216, 1);
+            top: 0;
+        }
+        // &:after {
+        //     width: 100%;
+        //     height: 3px;
+        //     background: #bdbcb7;
+        //     bottom: -2px;
+        // }
+    }
+}
+
+.sectionWrapper {
+    display: flex;
+    align-items: center;
+
+    li {
+        list-style: none;
+    }
+}
+
+.leaderboard-top {
+    .sub-wrapper {
+        padding: 15px 14px;
+        background-color: #0f1923;
+        border: 1px solid #020812;
+        display: flex;
+        // justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+    .rankDropdownWrapper {
+        flex-grow: 1;
+    }
+    .rankScoreWrapper {
+        padding: 21px 14px;
+    }
+}
+
+.rankTitle {
+    user-select: none;
+
+    .heading-small {
+        text-transform: uppercase;
+        font-size: 10px;
+        color: #30c0d8;
+    }
+    .heading-large {
+        text-transform: uppercase;
+        font-family: Tungsten;
+        font-size: 32px;
+        letter-spacing: 0.2px;
+    }
+}
+
+.rankSelect {
+    margin-left: auto;
+
+    svg {
+        transform: rotate(180deg);
+    }
+}
+
+.leaderboard-mid {
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    user-select: none;
+
+    .rankLabel {
+        font-size: 11px;
+        display: flex;
+        justify-content: center;
+
+        &:nth-child(1) {
+            width: 20.5%;
+        }
+        &:nth-child(2) {
+            flex-grow: 1;
+            width: 56%;
+            justify-content: flex-start;
+            padding-left: 5px;
+        }
+        &:nth-child(3) {
+            width: 23.5%;
+        }
+
+        span {
+            color:#f89c51;
+        }
+    }
+}
+
+// border-top: 4.5rem solid transparent;
+// border-left: 5.5rem solid #ece8e1;
+
+.leaderboard-bottom {
+    user-select: none;
+
+    .playerListWrapper {
+        list-style: none;
+        width: 100%;
+        position: relative;
+
+        // &:before {
+        //     content: '';
+        //     position: absolute;
+        //     border-top: 1rem solid transparent;
+        //     border-left: 1.5rem solid var(--theme-color);
+        //     left: 0;
+        //     bottom: 0;
+        //     z-index: 1;
+        // }
+
+        li.leaderboard-error {
+            color: #020812;
+            height: 300px !important;
+            justify-content: center;
+            font-size: 16px;
+            text-transform: uppercase;
+            font-family: "valorant";
+        }
+
+        li {
+            position: relative;
+            display: flex;
+            align-items: center;
+            background: #FFFBF5;
+            padding-top: 3px;
+            border-bottom: 3px solid rgba(219,218,213,.6);
+            height: 54px;
+            transition: 0.5s;
+            overflow-y: auto;
+
+            &:nth-child(1) {
+                height: 100px;
+                border-left: 3px solid #ff4655;
+                // border-left:3px solid rgba(48, 192, 216, 1);
+
+                h3 {
+                    font-size: 30px;
+                    color :#020812;
+                }
+                h2 {
+                    font-size: 22px;                    
+                }
+                p {
+                    font-size: 18px;
+                }
+            }
+
+            .player-rank {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                align-items: center;
+                width: 20.5%;
+                height: 100%;
+            }
+            .player-name {
+                background-color: rgba(247,247,247,.4);
+                display: flex;
+                align-items: center;
+                width: 56%;
+                flex-grow: 1;
+                height: 100%;
+                padding-left: 5px;
+            }
+            .player-score {
+                width: 23.5%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+            }
+            h3 {
+                font-size: 18px;
+                font-family: Tungsten;
+                color :#444;
+            }
+            h2 {
+                font-size: 17px;
+                color :#020812;
+                font-family: "Product Sans";
+                // font-family: 'Outfit', sans-serif;
+                // font-family: 'valorant';
+                // font-family: 'DINNextLTW04-Medium', 'Madera W01';
+                font-weight: 600;
+                // letter-spacing: 0.8px;
+                word-spacing: 2px;
+            }
+            p {
+                font-size: 14px;
+                span {
+                    color :#020812;
+                }
+            }
+        }
+    }
+}
+
+//transition of li's
+.leaderboard-bottom .playerListWrapper li {
+    &:nth-child(1) {
+        top: calc(-316px + 5*54px);
+        transition-delay: 20ms;
+        &.active {
+            top: 0;
+        }
+    }
+    &:nth-child(2) {
+        top: calc(-271px + 4*54px);
+        transition-delay: 40ms;
+        &.active {
+            top: 0;                    
+        }
+    }
+    &:nth-child(3) {
+        top: calc(-271px + 3*54px);
+        transition-delay: 60ms;
+        &.active {
+            top: 0;                    
+        }
+    }
+    &:nth-child(4) {
+        top: calc(-271px + 2*54px);
+        transition-delay: 80ms;
+        &.active {
+            top: 0;                    
+        }
+    }
+    &:nth-child(5) {
+        top: calc(-271px + 1*54px);
+        transition-delay: 100ms;
+        border-bottom: 3px solid #bdbcb7;
+        &.active {
+            top: 0;                    
+        }
+    }
+}

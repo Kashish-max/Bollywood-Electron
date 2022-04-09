@@ -1,0 +1,44 @@
+.timer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 100%;
+}
+
+.bar-timer {
+    // position: relative;
+    width: 100%;
+    height: 0;
+    transition: 6s linear;
+    background: rgba(253, 69, 86, 1);
+
+    p {
+        position: absolute;
+        top: 50vh;
+        text-transform: uppercase;
+        font-size: 20px;
+        transform: rotate(90deg);
+        color: rgba(255, 255, 255, 0.9);
+    }
+}
+
+.bar-timer.init {
+    height: calc(100vh - 60px);
+}
+
+.number-timer {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    border-top: 1px solid rgba(236,232,225,.1);
+    border-left: 1px solid rgba(236,232,225,.1);
+
+    p {
+        font-size: 30px;
+    }
+}

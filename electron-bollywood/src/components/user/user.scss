@@ -1,0 +1,194 @@
+@import url('http://fonts.cdnfonts.com/css/valorant');
+@import url(//db.onlinewebfonts.com/c/ea82369846239b74436ec7ba3eff1f78?family=Madera+W01);
+
+.user-comp {
+  position: relative;
+  margin-top: auto;
+  padding-bottom: 70px;
+  user-select: none;
+}
+
+.user {
+  position: relative;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: transform .5s cubic-bezier(.25,.46,.45,.94), opacity 0.5s;
+
+  &:hover .user-bg { background-color: #04313d; }
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  svg {
+    transform: scaleX(-1);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    cursor: pointer;    
+  }
+
+  .user-bg {
+    position: absolute;
+    height: 118px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: #021a20;
+    // background-color: rgba(230, 134, 55, 0.3);
+    transition: all 0.3s;
+    z-index: -1;
+
+    &:before {
+        content: '';
+        position: absolute;
+        border-top: 3.7rem solid transparent;
+        border-left: 3.5rem solid var(--theme-color);
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+  }
+}
+
+.user-container {
+  position: relative;
+  height: 118px;
+  width: 100%;
+  padding-left: 6.19px;
+  margin-left: auto;
+  z-index: 5;
+  
+  .u__name {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    span {
+      content: '';
+      position: relative;
+      width: 20px;
+      // height: 1px;
+      height: 1.5px;
+      // background: #30c0d8;
+      background: #ece8e1;
+
+      &.second{
+        flex-grow: 1;
+      }
+    }
+
+    p {
+      // margin: 0 5px;
+      font-family: "Madera W01";
+      font-size: 9px;
+      // color: #30c0d8;
+      color: #ece8e1;
+      padding: 6px 10px 8px 13px;
+      font-weight: 500;
+      display: inline-block;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+  }
+
+  .u__info {
+    display: flex;
+    padding: 10px 10px 10px 5px;
+    max-height: 85px;
+    // height: 100%;
+    overflow: hidden;
+
+    .not-logged {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      // justify-content: center;
+      padding-left: 27px;
+      align-items: center;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 2px;
+      p {
+        transform: translateY(-5px);
+        // font-family: 'Madera W01';
+      }
+    }
+
+    .imgg {
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 48px;
+        height: 48px;
+        background: rgba(48, 192, 216, 0.6);
+      }
+      img {
+        width: 48px;
+        height: 48px;
+        border: 1px solid #ece8e1;
+      }
+    }
+    .label {
+      display: flex;
+      flex-grow: 1;
+      justify-content: space-between;
+      padding: 0 10px 8px 13px;
+      
+      .subinfo {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-height: 53px;
+      }
+      .subinfo1 {
+        // transform: translateY(-14px);
+        overflow: auto;
+      }
+      .subinfo2 {
+        // transform: translateY(-10px);
+        text-align: right;
+        min-width: 84px;
+      }
+
+      h3, h4 {
+        font-family: 'Madera W01';
+        cursor: default;
+        font-weight: 500;
+        letter-spacing: 2px;
+        // line-height: 0.6;
+      }
+      h3 {
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      h4 {
+        // text-transform: uppercase;
+        font-size: 10px;
+        color: #f89c51;
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 206px;
+      }
+
+      p {
+        font-family: 'Madera W01';
+        cursor: default;
+        text-transform: uppercase;
+        font-size: 12px;
+        // line-height: 0.6;
+
+        span {
+          color: #30c0d8;
+          display: inline-block;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
